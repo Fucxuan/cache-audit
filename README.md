@@ -24,15 +24,15 @@ The Anthropic team runs alerts on cache hit rates and treats drops as incidents.
 ### Global (applies to all projects)
 
 ```bash
-mkdir -p ~/.claude/skills
-curl -o ~/.claude/skills/cache-audit.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit.md
+mkdir -p ~/.claude/skills/cache-audit
+curl -o ~/.claude/skills/cache-audit/SKILL.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit/SKILL.md
 ```
 
 ### Per-project
 
 ```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/cache-audit.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit.md
+mkdir -p .claude/skills/cache-audit
+curl -o .claude/skills/cache-audit/SKILL.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit/SKILL.md
 ```
 
 Then restart your Claude Code session for the skill to register.
